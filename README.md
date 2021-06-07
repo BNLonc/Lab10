@@ -7,4 +7,4 @@ An A/B test I'd do is to add a button to create a new entry that sticks around u
 
 https://bnlonc.github.io/Lab10/
 
-https://bnlonc.github.io/Lab10/secondSplit.html
+https://bnlonc.github.io/Lab10/secondSplit
