@@ -50,8 +50,5 @@ if (upl) {
     console.log(URL.createObjectURL(file));
 
     document.body.style.backgroundImage = 'url(' + URL.createObjectURL(file) + ')';
-
-    //preview.appendChild(image); // Assuming that "preview" is the div output where the content will be displayed.
-    
   }
 }
