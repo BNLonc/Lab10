@@ -42,14 +42,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 let upl = document.querySelector('#bgUpload');
 
-upl.onchange = function() {
-  
-  const file = upl.files[0];
+if (upl) {
+  upl.onchange = function() {
+    
+    const file = upl.files[0];
 
-  console.log(URL.createObjectURL(file));
+    console.log(URL.createObjectURL(file));
 
-  document.body.style.backgroundImage = 'url(' + URL.createObjectURL(file) + ')';
+    document.body.style.backgroundImage = 'url(' + URL.createObjectURL(file) + ')';
 
-  //preview.appendChild(image); // Assuming that "preview" is the div output where the content will be displayed.
-  
+    //preview.appendChild(image); // Assuming that "preview" is the div output where the content will be displayed.
+    
+  }
 }
