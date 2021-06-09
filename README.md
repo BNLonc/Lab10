@@ -2,8 +2,7 @@
 
 https://cse110-lab10-bnlonc.canny.io/
 
-Split.io went down for almost all of Sunday, it was impossible to log in or make a new account. 
-An A/B test I'd do is to add a button to create a new entry that sticks around until you refresh the page, with the idea that it could be implemented fully in a fleshed-out app. 
+The difference for the A/B test should be that one version has a file upload in the bottom right that allows the user to change the background out for an image. 
 
 https://bnlonc.github.io/Lab10/
 

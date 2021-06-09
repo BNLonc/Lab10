@@ -36,7 +36,7 @@
 
   <entry-page></entry-page>
 
-  <div id='newEntry'>New Entry</div>
+  <input id='bgUpload' type='file' accept='image/*'>
 
   <!-- journal-entry web component -->
   <script src="./components/journal-entry.js" type="module"></script>
@@ -45,8 +45,44 @@
   <!-- Router Script -->
   <script src="./scripts/router.js" type="module"></script>
 
+  <!-- Split SDK loaded via CDN. -->
+  <!-- Regular build, smaller footprint -->
+  <script src="//cdn.split.io/sdk/split-browser-0.1.0.min.js"></script>
+  <!-- Our custom script. -->
+  <script type="text/javascript">
+    (function() {
+      const id = Math.random().toString(36).substring(2, 15);
+      var factory = splitio({
+        core: {
+          authorizationKey: 'eo392jm4inlvtf8veo23jhj145qir040bru7',
+          key: id
+        }
+      });
+      var client = factory.client(id);
+
+      client.on(client.Event.SDK_READY, function() {
+        var treatment = client.getTreatment('bg-upload');
+
+        if (treatment === 'on') {
+          // Insert code for on treatment
+          //do nothing, the page is set up for two columns by default
+        } else if (treatment === 'off') {
+          document.querySelector('#bgUpload').remove();
+        } else {
+          // Insert code for control treatment
+        }
+
+        client.destroy().then(function() {
+          // Your data is successfully flushed.
+        });
+      });
+    })();
+  </script>
+
   <!-- Main Script -->
   <script src="./scripts/script.js" type="module"></script>
+
+  
 </body>
 
 </html>
